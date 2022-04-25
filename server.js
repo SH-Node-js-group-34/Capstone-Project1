@@ -20,6 +20,10 @@ const osData = JSON.stringify(options);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
         fs.readFile('./pages/index.html', (err, data) => {
+            if(err){
+                res.write('oops please try again');
+                res.end()
+            }
             res.write(data);
             res.end();
         })
@@ -27,6 +31,10 @@ const osData = JSON.stringify(options);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
         fs.readFile('./pages/about.html', (err, data) => {
+            if(err){
+                res.write('oops please try again');
+                res.end()
+            }
             res.write(data);
             res.end();
         })
@@ -42,6 +50,10 @@ const osData = JSON.stringify(options);
         res.statusCode = 404;
         res.setHeader('Content-Type', 'text/html');
         fs.readFile('./pages/404.html', (err, data) => {
+            if(err){
+                res.write('oops please try again');
+                res.end()
+            }
             res.write(data);
             res.end();
         })
